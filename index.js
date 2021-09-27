@@ -27,7 +27,7 @@ function calculateProfitAndLoss(initial, quant, current) {
 
     ShowOutput(
       "Your Profit is " + Profit + "₹",
-      "profit Percentage is " + ProfitPercentage + "%"
+      "Profit Percentage is " + ProfitPercentage + "%"
     );
 
     applyProfitstyle();
@@ -52,7 +52,7 @@ function calculateProfitAndLoss(initial, quant, current) {
     console.log(" no pain no gain and no gain no pain");
     ShowOutput(" no pain no gain and no gain no pain");
 
-    ShowOutput("no pain no gain ", "no gain no pain");
+    ShowOutput("No pain no gain ", "No gain no pain");
 
     applyNonestyle();
   }

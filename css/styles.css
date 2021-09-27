@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+body {
+  background-color: aquamarine;
+
+  font-family: "Nanum Gothic", sans-serif;
+}
+
+.heading-holder {
+    text-align: center;
+
+
+
+  }
+
+  .heading-holder h1{
+
+
+font-size: 2rem;
+
+font-weight: 800;
+
+  }
+
+
+.outerholder{
+
+width: 20rem;
+
+margin: auto;
+display: flex;
+
+flex-direction: column;
+background-color: blue;
+}
+
+
+.inputholder {
+
+text-align: center;
+  width: 100%;
+display: flex;
+
+flex-direction: column;
+margin: auto;
+ 
+}
+
+.inputholder label {
+padding: 1rem;
+  }
+
+
+.inputholder input {
+  display: block;
+  text-align: center;
+ margin: auto;
+}
+
+
+.buttonholder{
+
+padding: 1rem;
+
+text-align: center;
+
+background-color: chartreuse;
+
+}
+
+
+
+.button-primary {
+    border-radius: 0.5rem;
+    font-weight: bold;
+    height: 2rem;
+    font-family: "Nanum Gothic", sans-serif;
+    background-color: RED;
+    border-style: solid;
+    border-color: green;
+    color: blue;
+    margin: 1rem;
+    transition: all 0.5s ease;
+  }
+  
+  .button-primary:hover {
+    background-color: var(--highlightgreen);
+  
+    border-color: var(--highlightgreen);
+    color: var(--darkbl);
+    transition: all 0.5s ease;
+  }
+  

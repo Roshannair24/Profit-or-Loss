@@ -25,14 +25,12 @@ function calculateProfitAndLoss(initial, quant, current) {
         "%"
     );
 
-    ShowOutput( "Your Profit is "+Profit ,"profit Percentage is " +
-    ProfitPercentage +
-    "%"   );
+    ShowOutput(
+      "Your Profit is " + Profit + "₹",
+      "profit Percentage is " + ProfitPercentage + "%"
+    );
 
-    document.querySelector(".bxs-up-arrow").style.display = "block";
-    document.querySelector(".outputholder").classList.add("outputholder-profit");
-
-
+    applyProfitstyle();
   } else if (initial > current) {
     // loss
     let Loss = (initial - current) * quant;
@@ -44,17 +42,19 @@ function calculateProfitAndLoss(initial, quant, current) {
     );
 
     ShowOutput(
-        "Your Loss is " + Loss,"Loss Percentage is " + LossPercentage + "%"
+      "Your Loss is " + Loss + "₹",
+      "Loss Percentage is " + LossPercentage + "%"
     );
 
-    document.querySelector(".bxs-down-arrow").style.display = "block";
-  
-    document.querySelector(".outputholder").classList.add("outputholder-loss");
-
+    applyLossStyle();
   } else {
     // no pain no gain
     console.log(" no pain no gain and no gain no pain");
     ShowOutput(" no pain no gain and no gain no pain");
+
+    ShowOutput("no pain no gain ", "no gain no pain");
+
+    applyNonestyle();
   }
 }
 
@@ -70,13 +70,65 @@ function clickhandler() {
 
   if (linitialprice === 0 || lquantity === 0 || lcurr === 0) {
     console.log("Please fill out all Fields");
-    ShowOutput("Please fill out all Fields");
+    ShowOutput("Please fill out all fields with valid numerals", "");
+    document.querySelector(".outputholder").classList.add("outputholder-error");
+  } else if (linitialprice < 0 || lquantity < 0 || lcurr < 0) {
+    console.log("Please fill out all Fields");
+    ShowOutput("Please fill out all fields with valid numerals", "");
+    document.querySelector(".outputholder").classList.add("outputholder-error");
   } else {
     calculateProfitAndLoss(linitialprice, lquantity, lcurr);
   }
 }
 
-function ShowOutput(msg,msgpercentage) {
-    outputpara.innerText = msg;
-    outputpercentagepara.innerText=msgpercentage;
+function ShowOutput(msg, msgpercentage) {
+  outputpara.innerText = msg;
+  outputpercentagepara.innerText = msgpercentage;
+}
+
+function applyProfitstyle() {
+  document.querySelector(".bxs-up-arrow").style.display = "block";
+
+  document.querySelector(".bxs-down-arrow").style.display = "none";
+
+  document
+    .querySelector(".outputholder")
+    .classList.remove("outputholder-error");
+
+  document.querySelector(".outputholder").classList.remove("outputholder-loss");
+
+  document.querySelector(".outputholder").classList.remove("outputholder-none");
+
+  document.querySelector(".outputholder").classList.add("outputholder-profit");
+}
+
+function applyLossStyle() {
+  document.querySelector(".bxs-down-arrow").style.display = "block";
+
+  document.querySelector(".bxs-up-arrow").style.display = "none";
+
+  document
+    .querySelector(".outputholder")
+    .classList.remove("outputholder-error");
+
+  document
+    .querySelector(".outputholder")
+    .classList.remove("outputholder-profit");
+  document.querySelector(".outputholder").classList.remove("outputholder-none");
+
+  document.querySelector(".outputholder").classList.add("outputholder-loss");
+}
+
+function applyNonestyle() {
+  document
+    .querySelector(".outputholder")
+    .classList.remove("outputholder-error");
+
+  document
+    .querySelector(".outputholder")
+    .classList.remove("outputholder-profit");
+
+  document.querySelector(".outputholder").classList.remove("outputholder-loss");
+
+  document.querySelector(".outputholder").classList.add("outputholder-none");
 }

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap");
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -6,94 +6,188 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
+:root {
+  --dark-grey: #374151;
+  --off-white: #f3f4f6;
+
+  --green: #16c79a;
+
+  --red: #f05454;
+
+  --highlightgreen: #0dff92;
+
+  --bodybg: #222831;
+
+  --inputbg: #393e46;
+
+  --focuscol: #00adb5;
+
+  --whitevar: #eeeeee;
+}
+
 body {
-  background-color: aquamarine;
+background-color: var(--bodybg);
 
   font-family: "Nanum Gothic", sans-serif;
+
+
+  color: var(--off-white);
 }
 
 .heading-holder {
-    text-align: center;
-
-
-
-  }
-
-  .heading-holder h1{
-
-
-font-size: 2rem;
-
-font-weight: 800;
-
-  }
-
-
-.outerholder{
-
-width: 20rem;
-
-margin: auto;
-display: flex;
-
-flex-direction: column;
-background-color: blue;
+  text-align: center;
 }
 
+.heading-holder h1 {
+  font-size: 2rem;
+
+  font-weight: 800;
+}
+
+.outerholder {
+  width: 20rem;
+
+  margin: auto;
+  display: flex;
+
+  flex-direction: column;
+
+ background-color: var(--inputbg);
+font-weight: bold;
+  border-radius: 0.5rem;
+}
 
 .inputholder {
-
-text-align: center;
+  text-align: center;
   width: 100%;
-display: flex;
+  display: flex;
 
-flex-direction: column;
-margin: auto;
- 
+  flex-direction: column;
+  margin: auto;
 }
 
 .inputholder label {
-padding: 1rem;
-  }
-
+  padding: 1rem;
+}
 
 .inputholder input {
   display: block;
   text-align: center;
- margin: auto;
+  margin: auto;
+  border-radius: 0.5rem;
+  font-family: "Nanum Gothic", sans-serif;
+  font-weight: 800;
+  height: 1.5rem;
+  width: 80%;
+  border-style: solid;
+  border-color: var(--inputbg);
+background-color: var(--bodybg);
+  outline: none;
+ color: var(--whitevar);
 }
 
+::placeholder {
+  font-family: "Nanum Gothic", sans-serif;
+  font-weight: 400;
+}
 
-.buttonholder{
+.inputholder input:hover {
+  border-style: solid;
 
-padding: 1rem;
+border-color: var(--focuscol);
+}
 
-text-align: center;
-
-background-color: chartreuse;
+.inputholder input:focus {
+  border-style: solid;
+  border-color: var(--whitevar);
 
 }
 
+.buttonholder {
+  padding-top: 1rem;
 
+  text-align: center;
+
+
+}
 
 .button-primary {
-    border-radius: 0.5rem;
-    font-weight: bold;
-    height: 2rem;
-    font-family: "Nanum Gothic", sans-serif;
-    background-color: RED;
-    border-style: solid;
-    border-color: green;
-    color: blue;
-    margin: 1rem;
-    transition: all 0.5s ease;
-  }
-  
-  .button-primary:hover {
-    background-color: var(--highlightgreen);
-  
-    border-color: var(--highlightgreen);
-    color: var(--darkbl);
-    transition: all 0.5s ease;
-  }
-  
+  border-radius: 0.5rem;
+  font-weight: bolder;
+  font-size: 1.2rem;
+  height: 2rem;
+  font-family: "Nanum Gothic", sans-serif;
+background-color: var(--inputbg);
+
+
+
+  border-style: solid;
+ border-color: var(--focuscol);
+  color: var(--focuscol);
+  margin: 1rem;
+  transition: all 0.5s ease;
+}
+
+.button-primary:hover {
+  background-color: var(--focuscol);
+
+  border-color: var(--focuscol);
+  color: var(--inputbg);
+  transition: all 0.5s ease;
+}
+
+.outputholder {
+  padding: 0.5rem;
+
+  border-bottom-left-radius: 0.5rem;
+
+  border-bottom-right-radius: 0.5rem;
+
+  margin: 0;
+
+  display: flex;
+  flex-direction: row;
+}
+
+.outputholder .arrowholder {
+  width: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.outputholder .paraholder {
+  width: 90%;
+  text-align: left;
+  font-weight: 800;
+}
+
+.outputholder-profit {
+background-color: var(--green);
+
+box-shadow: 0px 0px 5px  var(--highlightgreen);
+}
+
+.outputholder-loss {
+  background-color: rgb(243, 40, 13);
+}
+
+.bx {
+  font-size: 1.5rem;
+}
+
+.bxs-up-arrow {
+  display: none;
+}
+
+.bxs-down-arrow {
+  display: none;
+}
+
+.outputholder p {
+  display: block;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}

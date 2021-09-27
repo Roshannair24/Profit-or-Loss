@@ -4,7 +4,8 @@ let CurrentPrice = document.querySelector("#Current-Price");
 
 let Tellmebtn = document.querySelector("#Tell-me");
 
-let outputdiv = document.querySelector(".output");
+let outputpara = document.querySelector(".output");
+let outputpercentagepara = document.querySelector(".output-percentage");
 
 function calculateProfitAndLoss(initial, quant, current) {
   if (current > initial) {
@@ -24,13 +25,14 @@ function calculateProfitAndLoss(initial, quant, current) {
         "%"
     );
 
-    ShowOutput(
-      "Your Profit is " +
-        Profit +
-        " and profit Percentage is " +
-        ProfitPercentage +
-        "%"
-    );
+    ShowOutput( "Your Profit is "+Profit ,"profit Percentage is " +
+    ProfitPercentage +
+    "%"   );
+
+    document.querySelector(".bxs-up-arrow").style.display = "block";
+    document.querySelector(".outputholder").classList.add("outputholder-profit");
+
+
   } else if (initial > current) {
     // loss
     let Loss = (initial - current) * quant;
@@ -42,8 +44,13 @@ function calculateProfitAndLoss(initial, quant, current) {
     );
 
     ShowOutput(
-      "Your Loss is " + Loss + " and Loss Percentage is " + LossPercentage + "%"
+        "Your Loss is " + Loss,"Loss Percentage is " + LossPercentage + "%"
     );
+
+    document.querySelector(".bxs-down-arrow").style.display = "block";
+  
+    document.querySelector(".outputholder").classList.add("outputholder-loss");
+
   } else {
     // no pain no gain
     console.log(" no pain no gain and no gain no pain");
@@ -69,6 +76,7 @@ function clickhandler() {
   }
 }
 
-function ShowOutput(msg) {
-  outputdiv.innerText = msg;
+function ShowOutput(msg,msgpercentage) {
+    outputpara.innerText = msg;
+    outputpercentagepara.innerText=msgpercentage;
 }

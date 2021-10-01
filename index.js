@@ -13,7 +13,7 @@ function calculateProfitAndLoss(initial, quant, current) {
 
     let Profit = (current - initial) * quant;
 
-    let ProfitPercentage = (Profit / initial) * 100;
+    let ProfitPercentage = ((Profit/quant) / initial) * 100;
 
     ProfitPercentage = ProfitPercentage.toFixed(2);
 
@@ -34,7 +34,7 @@ function calculateProfitAndLoss(initial, quant, current) {
   } else if (initial > current) {
     // loss
     let Loss = (initial - current) * quant;
-    let LossPercentage = (Loss / initial) * 100;
+    let LossPercentage = ((Loss/quant) / initial) * 100;
     LossPercentage = LossPercentage.toFixed(2);
 
     console.log(
